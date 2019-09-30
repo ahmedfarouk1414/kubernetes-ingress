@@ -13,8 +13,9 @@ RUN mkdir -p /etc/nginx/secrets \
 	&& chown -R nginx:0 /etc/nginx \
 	&& chown -R nginx:0 /var/cache/nginx \
 	&& chown -R nginx:0 /var/lib/nginx \
+	&& apk del libcap \
 	&& rm /etc/nginx/conf.d/* \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/cache/apk/*
 
 COPY nginx-ingress internal/configs/version1/nginx.ingress.tmpl internal/configs/version1/nginx.tmpl internal/configs/version2/nginx.virtualserver.tmpl /
 
