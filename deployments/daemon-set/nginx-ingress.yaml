@@ -30,7 +30,7 @@ spec:
        #- name: prometheus
          #containerPort: 9113
         securityContext:
-          allowPrivilegeEscalation: false
+          allowPrivilegeEscalation: true
           runAsUser: 101 #nginx
           capabilities:
             drop:

@@ -59,7 +59,7 @@ spec:
           containerPort: {{ .Values.prometheus.port }}
 {{- end }}
         securityContext:
-          allowPrivilegeEscalation: false
+          allowPrivilegeEscalation: true
           runAsUser: 101 #nginx
           capabilities:
             drop:

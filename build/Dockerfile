@@ -10,7 +10,7 @@ RUN mkdir -p /var/lib/nginx \
 	&& mkdir -p /etc/nginx/secrets \
 	&& apt-get update \
 	&& apt-get install -y libcap2-bin \
-	&& setcap 'cap_net_bind_service=ep' /usr/sbin/nginx \
+	&& setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx \
 	&& chown -R nginx:0 /etc/nginx \
 	&& chown -R nginx:0 /var/cache/nginx \
 	&& chown -R nginx:0 /var/lib/nginx \
